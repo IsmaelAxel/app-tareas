@@ -7,7 +7,7 @@ const Tarea = function (id,titulo,estado){
     this.id = id
     this.titulo = titulo 
     this.estado = estado
-}
+} /* Creamos una función constructora para que cree Tarea nueva, esta la usaremos mas abajo en el metodo "guardarTarea" */
 module.exports = {
     tareas: leerJSON(),
     listar: function(tareas = this.tareas){
@@ -15,15 +15,19 @@ module.exports = {
         tareas.forEach(({id,titulo,estado}, i) => {
             console.log(`${id}. ${titulo} - ${estado}`.green)
         });
-    return null
     },/* Con el metodo listar, pasamos como parametro predeterminado el atributo de this.tareas, que justamente lee el json, una vez haciendo eso.
      Hacemos un ForEach que recorra todo el json que ahora tiene formato de objeto literal. Por ultimo mostramos por consola todo lo que tenemos en el json */
-    guardarTarea: function(titulo){
+    guardarTarea: function(nombreTarea){
         let tarea = this.tareas
-        let ultimoId = tarea[tarea.length - 1] ? tarea[tarea.length - 1].id : 0;
-        let nuevaTarea = new Tarea(ultimoId + 1,titulo, estado = "pendiente")
-        tarea.push(nuevaTarea)
-        escribirJSON(tarea)
-        return `Nueva tarea creada\n----------------------\n${titulo}`
+        let ultimoId = tarea[tarea.length - 1] ? tarea[tarea.length - 1].id : 0; /* primero nos dice el numero de elementos que tiene tarea y le restamos uno para pararnos en el id, si no hay ningun id, su valor inicial es 0*/
+        let nuevaTarea = new Tarea(ultimoId + 1,nombreTarea, estado = "pendiente") /* llamamos a la funcion constructora para que cree una nueva Tarea, donde tomara el ultimo id, titulo pasado por parametro y el estado que sera igual a pendiente */
+        tarea.push(nuevaTarea) /* la nuevaTarea la enviamos al array de tarea */
+        escribirJSON(tarea)/* sobreescribimos tarea con el nuevo array de tarea */
+        return `Nueva tarea creada\n----------------------\n${nombreTarea}` /* Retornamos un texto que nos dira informacion si es que la nueva tarea se pudo subir exitosamente */
+    },
+    filtrarPorEstado: function(estado){
+        let tareasFiltradas = this.tareas.filter(tarea => tarea.estado === estado)       
+        return tareasFiltradas
     }
+
 } 

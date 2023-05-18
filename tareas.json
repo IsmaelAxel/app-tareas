@@ -13,5 +13,25 @@
       "id": 3,
       "titulo": "Break",
       "estado": "pendiente"
+   },
+   {
+      "id": 4,
+      "titulo": "Estudiar para analisis matematico",
+      "estado": "pendiente"
+   },
+   {
+      "id": 5,
+      "titulo": "Desarrollar la app de la concesionaria",
+      "estado": "pendiente"
+   },
+   {
+      "id": 6,
+      "titulo": "Estudiar ingles",
+      "estado": "pendiente"
+   },
+   {
+      "id": 7,
+      "titulo": "Jugar death stranding",
+      "estado": "pendiente"
    }
 ]
