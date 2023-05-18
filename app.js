@@ -19,9 +19,9 @@ switch(true){
     case accion === "filtrar":
         estado = argv[3]
         listadoDeTareasFiltrado = archivo.filtrarPorEstado(estado)
-        console.log(`tareas en estado de: ${estado}\n----------------`.rainbow)
+        console.log(`tareas en estado de: "${estado}"\n----------------`.rainbow)
         listadoDeTareasFiltrado.forEach((tarea)=>{
-            console.log(`${tarea.id}.${tarea.titulo}\n--------------`.green)
+            console.log(`${tarea.id}.${tarea.titulo}`.green)
         })
     break
     case accion !== "listar" && accion !== "crear"  && accion !== undefined:
