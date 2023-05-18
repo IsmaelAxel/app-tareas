@@ -1,17 +1,17 @@
 [
-    {
-        "id" : 1,
-        "titulo": "Repasar JS",
-        "estado": "terminada"
-    },
-    {
-        "id": 2,
-        "titulo": "Armar aplicación de Tareas",
-        "estado": "en progreso"
-    },
-    {
-        "id": 3,
-        "titulo": "Break",
-        "estado": "pendiente"
-    }
+   {
+      "id": 1,
+      "titulo": "Repasar JS",
+      "estado": "terminada"
+   },
+   {
+      "id": 2,
+      "titulo": "Armar aplicación de Tareas",
+      "estado": "en progreso"
+   },
+   {
+      "id": 3,
+      "titulo": "Break",
+      "estado": "pendiente"
+   }
 ]
